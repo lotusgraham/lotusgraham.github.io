@@ -355,20 +355,27 @@ p {
 	animation-fill-mode:forwards;
 
 	-webkit-animation-duration:1s;
-	-moz-animation-duration:1s;
+	-moz-animation-duration:1.s;
 	animation-duration:1s;
+
 }
 
 .fade-in.one {
 -webkit-animation-delay: 0.7s;
 -moz-animation-delay: 0.7s;
 animation-delay: 0.7s;
+-webkit-animation-duration:.5s;
+-moz-animation-duration:.5s;
+animation-duration:.5s;
 }
 
 .fade-in.two {
--webkit-animation-delay: 1.4s;
--moz-animation-delay:1.4s;
-animation-delay: 1.4s;
+-webkit-animation-delay: 1s;
+-moz-animation-delay:1s;
+animation-delay: 1s;
+-webkit-animation-duration:1s;
+-moz-animation-duration:1s;
+animation-duration:1s;
 }
 
 .fade-in.three {
@@ -377,11 +384,29 @@ animation-delay: 1.4s;
 animation-delay: 1.6s;
 }
 
-$(".fadeone").hide(0).delay(0).fadeIn(500)
-$(".fadetwo").hide(0).delay(1000).fadeIn(1000)
-$(".fadefour").delay(1444).fadeIn(1500)
-$("button").hide(0).delay(1444).fadeIn(1500)
-$(".back").hide(0).delay(1444).fadeIn(1500)
+.float {
+    position: relative;
+    -webkit-animation: floatBubble .4s   normal ease-out;
+    animation: floatBubble .6s   normal ease-out, fadeIn ease-in .6s;
+    animation-fill-mode:forwards
+}
+
+@-webkit-keyframes floatBubble {
+    0% {
+        top:1000px;
+    }
+    100% {
+        top: 0px;
+    }
+}
+@keyframes floatBubble {
+    0% {
+        top:500px;
+    }
+    100% {
+        top: 0px;
+    }
+}
 
 @media only screen and (max-width: 780px)
 {
